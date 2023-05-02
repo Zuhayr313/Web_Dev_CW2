@@ -1,5 +1,6 @@
 const guestbookDAO = require("../models/guestbookModel");
 const userDao = require("../models/userModel.js");
+const path = require("path");
 
 const db = new guestbookDAO();
 db.init();
@@ -9,13 +10,42 @@ exports.show_login = function (req, res) {
 };
 
 exports.handle_login = function (req, res) {
-  // res.redirect("/new");
-  res.render("newEntry", {
-    title: "Guest Book",
-    user: "user"
-  });
+  res.render("fitnessPage");
+  //res.render("newEntry", {
+  //  title: "Guest Book",
+  //  user: "user"
+  //});
 };
 
+exports.landing_page = function (req, res) {
+  res.redirect('/about.html');
+};
+
+exports.show_fitnessPage = function (req, res) {
+  res.render("fitnessPage");
+  //res.render("newEntry", {
+  //  title: "Guest Book",
+  //  user: "user"
+  //});
+};
+
+exports.show_nutritionPage = function (req, res) {
+  res.render("nutritionPage");
+  //res.render("newEntry", {
+  //  title: "Guest Book",
+  //  user: "user"
+  //});
+};
+
+exports.show_healthyLifestylePage = function (req, res) {
+  res.render("healthyLifestylePage");
+  //res.render("newEntry", {
+  //  title: "Guest Book",
+  //  user: "user"
+  //});
+};
+
+/*
 exports.landing_page = function (req, res) {
   db.getAllEntries()
     .then((list) => {
@@ -28,6 +58,7 @@ exports.landing_page = function (req, res) {
       console.log("promise rejected", err);
     });
 };
+*/
 
 exports.show_new_entries = function (req, res) {
   res.render("newEntry", {

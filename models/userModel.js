@@ -1,31 +1,33 @@
 const Datastore = require("nedb");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const dbFilePath = "./userDB.db";
 
 class UserDAO {
     constructor(dbFilePath) {
-        if (dbFilePath) {
-            //embedded
-            this.db = new Datastore({
-                filename: dbFilePath,
-                autoload: true
-            });
-        } else {
-            //in memory
-            this.db = new Datastore();
-        }
+        //if (dbFilePath) {
+        //embedded
+        this.db = new Datastore({
+            filename: "./userDB.db",
+            autoload: true
+        });
+
+        //  } else {
+        //in memory
+        // this.db = new Datastore();
+        // }
     }
     // for the demo the password is the bcrypt of the user name
     init() {
-        this.db.insert({
-            user: 'Peter',
-            password:
-                '$2b$10$I82WRFuGghOMjtu3LLZW9OAMrmYOlMZjEEkh.vx.K2MM05iu5hY2C'
-        });
-        this.db.insert({
-            user: 'Ann',
-            password: '$2b$10$bnEYkqZM.MhEF/LycycymOeVwkQONq8kuAUGx6G5tF9UtUcaYDs3S'
-        });
+        //this.db.insert({
+        //   user: 'Peter',
+        //  password:
+        //      '$2b$10$I82WRFuGghOMjtu3LLZW9OAMrmYOlMZjEEkh.vx.K2MM05iu5hY2C'
+        // });
+        //  this.db.insert({
+        //    user: 'Ann',
+        //    password: '$2b$10$bnEYkqZM.MhEF/LycycymOeVwkQONq8kuAUGx6G5tF9UtUcaYDs3S'
+        // });
         return this;
     }
     create(username, password) {
