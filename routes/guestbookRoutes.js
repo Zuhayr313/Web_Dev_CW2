@@ -13,9 +13,15 @@ router.post('/register', controller.post_new_user);
 router.get("/loggedIn", verify, controller.loggedIn_landing);
 router.get("/logout", controller.logout);
 
-router.get("/fitnessPage", controller.show_fitnessPage);
-router.get("/nutritionPage", controller.show_nutritionPage);
-router.get("/healthyLifestylePage", controller.show_healthyLifestylePage);
+router.get("/fitnessPage", controller.show_fitness_Page);
+router.get("/newFitnessGoal", controller.show_new_Fitness_Goal);
+router.post("/newFitnessGoal", controller.post_new_Fitness_Goal);
+router.get("/editFitnessGoal", controller.show_edit_Fitness_Goal);
+router.post("/editFitnessGoal", controller.post_edit_Fitness_Goal);
+
+router.get("/nutritionPage", controller.show_nutrition_Page);
+
+router.get("/healthyLifestylePage", controller.show_healthy_Lifestyle_Page);
 
 router.get('/new', verify, controller.show_new_entries);
 router.post('/new', verify, controller.post_new_entry);

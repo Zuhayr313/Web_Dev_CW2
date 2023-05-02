@@ -1,0 +1,70 @@
+<html><head>
+{{>header}}
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" >Navbar</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/fitnessPage">Fitness Page <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/nutritionPage">Nutrition Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/healthyLifestylePage">Healthy Lifestyle Page</a>
+                </li>
+             </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <a id="logout" href="/logout" class="btn btn-outline-light my-2 my-sm-0">
+                      Sign out
+                    </a>
+                  </form>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+<div class="container">
+<br>
+<h1>Fitness Page</h1>
+
+<table class="table table-striped">
+  <thead class="thead-primary">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      <th >
+      <a href="/newFitnessGoal" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">New Goal</a>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td >
+        <a id="editgoal" href="/editFitnessGoal" class="btn btn-outline-dark my-5 my-sm-0">
+          Edit Goal
+        </a>
+        <a id="deletegoal" href="/deleteFitnessGoal" class="btn btn-outline-dark my-5 my-sm-0">
+          Delete Goal
+        </a>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+</div>
+</body>
+</html>

@@ -1,12 +1,12 @@
 const nedb = require('nedb');
 class GuestBook {
     constructor(dbFilePath) {
-        if (dbFilePath) {
-            this.db = new nedb({ filename: dbFilePath, autoload: true });
-            console.log('DB connected to ' + dbFilePath);
-        } else {
-            this.db = new nedb();
-        }
+        //if (dbFilePath) {
+        this.db = new nedb({ filename: "./guestbook.db", autoload: true });
+        console.log('DB connected to ' + './guestbook.db');
+        //} else {
+        //    this.db = new nedb();
+        //}
     }
     //a function to seed the database
     init() {
