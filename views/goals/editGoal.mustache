@@ -34,35 +34,45 @@
 
 <div class="container">
 <br>
-<h2>Edit a Fitness Goal</h2>
+{{#fitnessGoals}}
+<h2>Edit {{title}} Goal - ID {{_id}}</h2>
 
-<form method="post" role="form" action="/editFitnessGoal">
+<form method="post" role="form" action="/editFitnessGoal/{{_id}}">
+
+<fieldset>
 
 <div class="form-group">
-<label for="author">Author</label>
-<input type="text" class="form-control" id="author"
-name="author" placeholder="Enter a subject line"
+<label for="goal">Goal</label>
+<input type="text" class="form-control" id="goal"
+name="goal" placeholder="Enter the goal" value= "{{goal}}"
 required>
 </div>
 
 <div class="form-group">
-<label for="subject">Subject</label>
-<input type="text" class="form-control" id="subject"
-name="subject" placeholder="Enter a subject line"
+<label for="goal_Type">Goal Type</label>
+<input type="text" class="form-control" id="goal_Type"
+name="goal_Type" placeholder="Enter the type of goal" value="{{goal_Type}}">
+</div>
+
+<div class="form-group">
+<label for="set_Achievement_Date">Set Achievement Date</label>
+<input type="text" class="form-control" id="set_Achievement_Date"
+name="set_Achievement_Date" placeholder="Enter an achievement date in format **/**/****" value="{{set_Achievement_Date}}"
 required>
 </div>
 
 <div class="form-group">
-<label for="contents">Entry text</label>
-<textarea class="form-control" id="contents" name="contents"
-placeholder="Enter your comments here." rows="3"
-required>
-</textarea>
+    <label for="goal_Reps">Number of Repetitions</label>
+    <input type="number" class="form-control" id="goal_Reps"
+     name="goal_Reps" placeholder="Enter a number of repetitions" value={{goal_Reps}}>
 </div>
 
 <div class="form-group">
-<input type="submit" value="Post entry" class="btn btn-primary">
+<button id="updateGoal" class="btn btn-primary" type="submit">Update Goal</button>
 </div>
+{{/fitnessGoals}}
+
+</fieldset>
 
 </form>
 

@@ -34,8 +34,8 @@
 <br>
 <h1>Fitness Page</h1>
 
-<a href="/completedFitnessGoal" class="btn btn-primary" role="button" aria-pressed="true">Goals Achieved</a>
-<h2>Uncompleted Goals</h2>
+<a href="/fitnessPage" class="btn btn-primary" role="button" aria-pressed="true">Goals Uncompleted</a>
+<h2>Completed Goals</h2>
 
 <table class="table table-striped">
   <thead class="thead-primary">
@@ -45,6 +45,8 @@
       <th class="text-center align-middle" scope="col">Date Created</th>
       <th class="text-center align-middle" scope="col">Set Achievement Date</th>
       <th class="text-center align-middle" scope="col">Number of Repetitions</th>
+      <th class="text-center align-middle" scope="col">Goal Achieved</th>
+      <th class="text-center align-middle" scope="col">Achievement Date</th>
       <th class="text-center align-middle" scope="col">
       <a href="/newFitnessGoal" class="btn btn-primary" role="button" aria-pressed="true">New Goal</a>
       </th>
@@ -58,6 +60,8 @@
       <td class="text-center align-middle">{{goal_Created_Date}}</td>
       <td class="text-center align-middle">{{set_Achievement_Date}}</td>
       <td class="text-center align-middle">{{goal_Reps}}</td>
+      <td class="text-center align-middle">{{goal_Achieved}}</td>
+      <td class="text-center align-middle">{{actual_Achievement_Date}}</td>
       <td class="text-center align-middle">
 
         <form action="/editFitnessGoal/{{_id}}" method="GET">
