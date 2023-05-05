@@ -1,20 +1,22 @@
-<html><head>
+<html>
+<head>
 {{>header}}
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" >Navbar</a>
+<body data-spy="scroll" data-target="#navbar-example3" data-offset="25">
+
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a  class="navbar-brand" >Wellbeing Application</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/fitnessPage">Fitness Page <span class="sr-only">(current)</span></a>
+            <ul class="navbar-nav mr-auto nav-pills">
+                <li class="nav-item active ">
+                    <a  class="nav-link active btn btn-outline-light text-dark " href="/fitnessPage">Fitness Page <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/nutritionPage">Nutrition Page</a>
+                    <a class="nav-link text-white" href="/nutritionPage">Nutrition Page</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/healthyLifestylePage">Healthy Lifestyle Page</a>
+                    <a class="nav-link text-white" href="/healthyLifestylePage">Healthy Lifestyle Page</a>
                 </li>
              </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -27,15 +29,29 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </a>
-    </nav>
+     </nav>
 
-<div class="container">
+<div class="bg-primary text-center text-white">
+<h1 class="font-weight-bold">Fitness Page</h1>
+<h5>View Information about fitness and create fitness goals to achieve</h5>
 <br>
-<h1 style= "text-align: center">Fitness Page</h1>
+</div>
 
-<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-    <h2 style='text-align: center;' >Uncompleted Goals</h2>
-    <a href="/completedFitnessGoal" id="completedGoalsPage"class="btn btn-primary mb-2 justify-content-end" role="button" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2-check" viewBox="0 0 16 16">
+<br>
+<div class="container-fluid">
+
+<div class="row">
+<div class="col-sm-2" >
+
+</div>
+
+<div class="col-sm-8">
+
+<div id="goalsSection"> 
+    <h2 class="text-center">Goals In Progress</h2>
+
+<div class="btn-toolbar justify-content-end" role="toolbar" aria-label="Toolbar with button groups">
+  <a href="/completedFitnessGoal" id="completedGoalsPage"class="btn btn-primary mb-2 justify-content-end" role="button" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2-check" viewBox="0 0 16 16">
   <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z"/>
   <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z"/>
   <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3Z"/>
@@ -105,54 +121,133 @@
   </table>
 
 {{^fitnessGoals}}
-No fitness goals yet.
+<h5 class="text-center">No fitness goals yet</h5>
 {{/fitnessGoals}}
+<br>
 
-<nav id="navbar-example2" class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#fat">@fat</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#mdo">@mdo</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#one">one</a>
-        <a class="dropdown-item" href="#two">two</a>
-        <div role="separator" class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#three">three</a>
+</div>
+      <div id="settingGoalsSection" >         
+        <h2 class="text-center">Setting Goals</h2>
+        <br>
+        <p style="font-size:18px" class="text-justify">When setting fitness goals, it's important to set specific, measurable, achievable, relevant, and time-bound (SMART) goals. For example, a SMART goal might be to run a 5K race in 30 minutes within six months. Breaking your goals down into smaller, more manageable steps can also help you stay motivated and on track.</p>
+        <br>
       </div>
-    </li>
-  </ul>
-</nav>
-<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-  <h4 id="fat">@fat</h4>
-  <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
-  <h4 id="mdo">@mdo</h4>
-    <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
 
-Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.</p>
+      <div id="creatingAPlanSection" >         
+        <h2 class="text-center">Creating a Plan</h2>
+        <br>
 
-  <h4 id="one">one</h4>
-    <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
+      <div class="container">
+      <div class="row">  
+      <div class="col-sm">
+      <br>
+      <br>
+        <p style="font-size:18px" class="text-justify">Once you have set your fitness goals, create a plan to achieve them. This could include scheduling your workouts, finding a workout buddy or joining a fitness class, tracking your progress, and adjusting your plan as needed.</p>
+      </div>
+      <div class="col-sm text-center">
+        <img src="https://www.xero.com/content/dam/xero/pilot-images/guides/planning---performance/Plan-Performance-Plans-Hero.1646877603214.png" alt="Runner" width="355" height="200" class="rounded mx-auto d-block">
+      </div>
+      </div>
+      </div> 
 
-Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.</p>
+      <br>
+      </div>  
 
-  <h4 id="two">two</h4>
-    <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
+      <div id="benefitsOfExerciseSection" >    
+        <h2 class="text-center">Benefits of exercise</h2>
+        <br>
+       
+      <div class="container">
+      <div class="row">  
+      <div class="col-sm text-center">
+        <img src="https://prod-ne-cdn-media.puregym.com/media/805727/sc0011_improve-your-mental-health-2x.jpg?quality=80" alt="Runner" width="355" height="200" class="rounded mx-auto d-block">
+      </div>
+      <div class="col-sm">
+        <p style="font-size:18px" class="text-justify">Regular exercise can have many benefits, such as:</p>
+         <ul style="font-size:18px">
+          <li>Improved cardiovascular health</li>
+          <li>Increased muscle strength and endurance</li>
+          <li>Better sleep</li>
+          <li>Reduced stress and anxiety</li>
+          <li>Improved mood and mental health</li>
+        </ul>
+      </div>
+      </div>
+      </div> 
+       
+        <br>
+      </div>
+      
+      <div id="typesOfExerciseSection" > 
+        <h2 class="text-center">Types of Exercises</h2>
+        <br> 
+      <div class="container">
+      <div class="row">  
+      <div class="col-sm">
+        <p style="font-size:18px" class="text-justify">There are many different types of exercises that can help improve your fitness, including aerobic/cardio exercises (e.g. running, cycling, swimming), strength training (e.g. weightlifting), flexibility exercises (e.g. stretching, yoga), and balance exercises (e.g. tai chi).  It's important to choose exercises that you enjoy and that fit into your lifestyle.</p>
+      </div>
+      <div class="col-sm text-center">
+        <img src="https://health.clevelandclinic.org/wp-content/uploads/sites/3/2013/09/inexpensiveExercise-1277759983-770x533-1.jpg" alt="Runner" width="355" height="200" class="rounded mx-auto d-block">
+      </div>
+      </div>
+      </div> 
+        
+        <br>
+      </div> 
 
-Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.</p>
+      <div id="safetyTipsSection" >         
+        <h2 class="text-center">Safety Tips</h2>
+        <br>
+        <p style="font-size:18px" class="text-justify">It's important to exercise safely to avoid injury. This includes warming up before exercise, using proper form, wearing appropriate footwear and clothing, staying hydrated, and gradually increasing the intensity of your workouts over time.</p>      
+        <br>
+      </div>
 
-  <h4 id="three">three</h4>
-  <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
+    
 
-Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.</p>
+</div>
+<div class="col-sm-2">
+
+<div class="sticky-top">
+<br>
+<br>
+<br>
+ <nav id="navbar-example3" class="navbar">
+
+      <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+          <a class="nav-link active" href="#goalsSection">Goals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#settingGoalsSection">Setting Goals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#creatingAPlanSection">Creating a Plan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#benefitsOfExerciseSection">Benefits of Exercise</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#typesOfExerciseSection">Types of Exercise</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#safetyTipsSection">Safety Tips</a>
+        </li>
+      </ul>
+
+  </nav>
 </div>
 
+</div>
+
+</div>
 
 </div>
 </body>
+
+<div class="footer bg-primary">
+  <br>
+  <p>WAD2 Practical coursework: Development of a wellness web application</p>
+  <br>
+</div>
+
 </html>

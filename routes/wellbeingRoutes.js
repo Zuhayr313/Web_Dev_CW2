@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/guestbookControllers.js');
-const { login } = require('../auth/auth')
-const { verify } = require('../auth/auth')
+const controller = require('../controllers/wellbeingControllers.js');
+const { login } = require('../auth/auth.js')
+const { verify } = require('../auth/auth.js')
 
 router.get("/", controller.landing_page);
 

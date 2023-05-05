@@ -1,20 +1,22 @@
-<html><head>
+<html>
+<head>
 {{>header}}
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" >Navbar</a>
+<body data-spy="scroll" data-target="#navbar-example3" data-offset="25">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/fitnessPage">Fitness Page <span class="sr-only">(current)</span></a>
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a  class="navbar-brand" >Wellbeing Application</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav-pills">
+                <li class="nav-item active ">
+                    <a  class="nav-link active btn btn-outline-light text-dark " href="/fitnessPage">Fitness Page <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/nutritionPage">Nutrition Page</a>
+                    <a class="nav-link text-white" href="/nutritionPage">Nutrition Page</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/healthyLifestylePage">Healthy Lifestyle Page</a>
+                    <a class="nav-link text-white" href="/healthyLifestylePage">Healthy Lifestyle Page</a>
                 </li>
              </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -23,20 +25,32 @@
                     </a>
                   </form>
         </div>
-
-        <a class="navbar-toggler" role="button" data-toggle="collapse" href="/nutritionPage"
+        <a class="navbar-toggler" role="button" data-toggle="collapse" href="/healthyLifestylePage"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </a>
-        
-    </nav>
+     </nav>
 
-<div class="container">
+<div class="bg-primary text-center text-white">
+<h1 class="font-weight-bold">Fitness Page</h1>
+<h5>View Information about fitness and create fitness goals to achieve</h5>
 <br>
-<h1 style= "text-align: center" >Fitness Page</h1>
+</div>
 
-  <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-    <h2 style='text-align: center;' >Completed Goals</h2>
+<br>
+<div class="container-fluid">
+
+<div class="row">
+<div class="col-sm-2" >
+
+</div>
+
+<div class="col-sm-8">
+
+<div id="goalsSection"> 
+    <h2 class="text-center">Completed Goals</h2>
+
+  <div class="btn-toolbar justify-content-end" role="toolbar" aria-label="Toolbar with button groups">
     <a href="/fitnessPage" id="uncompletedGoalsPage"class="btn btn-primary mb-2 justify-content-end" role="button" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
   <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
   <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
@@ -51,7 +65,6 @@
       <th class="text-center align-middle" scope="col">Date Created</th>
       <th class="text-center align-middle" scope="col">Set Achievement Date</th>
       <th class="text-center align-middle" scope="col">Number of Repetitions</th>
-      <th class="text-center align-middle" scope="col">Goal Achieved</th>
       <th class="text-center align-middle" scope="col">Achievement Date</th>
       <th class="text-center align-middle" scope="col">
       <a href="/newFitnessGoal" class="btn btn-primary" role="button" aria-pressed="true">
@@ -70,7 +83,6 @@
       <td class="text-center align-middle">{{goal_Created_Date}}</td>
       <td class="text-center align-middle">{{set_Achievement_Date}}</td>
       <td class="text-center align-middle">{{goal_Reps}}</td>
-      <td class="text-center align-middle">{{goal_Achieved}}</td>
       <td class="text-center align-middle">{{actual_Achievement_Date}}</td>
       <td class="text-center align-middle">
 
@@ -90,9 +102,133 @@
   </table>
 
 {{^fitnessGoals}}
-No fitness goals yet.
+<h5 class="text-center">No fitness goals yet</h5>
 {{/fitnessGoals}}
+<br>
+
+</div>
+      <div id="settingGoalsSection" >         
+        <h2 class="text-center">Setting Goals</h2>
+        <br>
+        <p style="font-size:18px" class="text-justify">When setting fitness goals, it's important to set specific, measurable, achievable, relevant, and time-bound (SMART) goals. For example, a SMART goal might be to run a 5K race in 30 minutes within six months. Breaking your goals down into smaller, more manageable steps can also help you stay motivated and on track.</p>
+        <br>
+      </div>
+
+      <div id="creatingAPlanSection" >         
+        <h2 class="text-center">Creating a Plan</h2>
+        <br>
+
+      <div class="container">
+      <div class="row">  
+      <div class="col-sm">
+      <br>
+      <br>
+        <p style="font-size:18px" class="text-justify">Once you have set your fitness goals, create a plan to achieve them. This could include scheduling your workouts, finding a workout buddy or joining a fitness class, tracking your progress, and adjusting your plan as needed.</p>
+      </div>
+      <div class="col-sm text-center">
+        <img src="https://www.xero.com/content/dam/xero/pilot-images/guides/planning---performance/Plan-Performance-Plans-Hero.1646877603214.png" alt="Runner" width="355" height="200" class="rounded mx-auto d-block">
+      </div>
+      </div>
+      </div> 
+
+      <br>
+      </div>  
+
+      <div id="benefitsOfExerciseSection" >    
+        <h2 class="text-center">Benefits of exercise</h2>
+        <br>
+       
+      <div class="container">
+      <div class="row">  
+      <div class="col-sm text-center">
+        <img src="https://prod-ne-cdn-media.puregym.com/media/805727/sc0011_improve-your-mental-health-2x.jpg?quality=80" alt="Runner" width="355" height="200" class="rounded mx-auto d-block">
+      </div>
+      <div class="col-sm">
+        <p style="font-size:18px" class="text-justify">Regular exercise can have many benefits, such as:</p>
+         <ul style="font-size:18px">
+          <li>Improved cardiovascular health</li>
+          <li>Increased muscle strength and endurance</li>
+          <li>Better sleep</li>
+          <li>Reduced stress and anxiety</li>
+          <li>Improved mood and mental health</li>
+        </ul>
+      </div>
+      </div>
+      </div> 
+       
+        <br>
+      </div>
+      
+      <div id="typesOfExerciseSection" > 
+        <h2 class="text-center">Types of Exercises</h2>
+        <br> 
+      <div class="container">
+      <div class="row">  
+      <div class="col-sm">
+        <p style="font-size:18px" class="text-justify">There are many different types of exercises that can help improve your fitness, including aerobic/cardio exercises (e.g. running, cycling, swimming), strength training (e.g. weightlifting), flexibility exercises (e.g. stretching, yoga), and balance exercises (e.g. tai chi).  It's important to choose exercises that you enjoy and that fit into your lifestyle.</p>
+      </div>
+      <div class="col-sm text-center">
+        <img src="https://health.clevelandclinic.org/wp-content/uploads/sites/3/2013/09/inexpensiveExercise-1277759983-770x533-1.jpg" alt="Runner" width="355" height="200" class="rounded mx-auto d-block">
+      </div>
+      </div>
+      </div> 
+        
+        <br>
+      </div> 
+
+      <div id="safetyTipsSection" >         
+        <h2 class="text-center">Safety Tips</h2>
+        <br>
+        <p style="font-size:18px" class="text-justify">It's important to exercise safely to avoid injury. This includes warming up before exercise, using proper form, wearing appropriate footwear and clothing, staying hydrated, and gradually increasing the intensity of your workouts over time.</p>      
+        <br>
+      </div>
+
+    
+
+</div>
+<div class="col-sm-2">
+
+<div class="sticky-top">
+<br>
+<br>
+<br>
+ <nav id="navbar-example3" class="navbar">
+
+      <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+          <a class="nav-link active" href="#goalsSection">Goals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#settingGoalsSection">Setting Goals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#creatingAPlanSection">Creating a Plan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#benefitsOfExerciseSection">Benefits of Exercise</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#typesOfExerciseSection">Types of Exercise</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#safetyTipsSection">Safety Tips</a>
+        </li>
+      </ul>
+
+  </nav>
+</div>
+
+</div>
+
+</div>
 
 </div>
 </body>
+
+<div class="footer bg-primary">
+  <br>
+  <p>WAD2 Practical coursework: Development of a wellness web application</p>
+  <br>
+</div>
+
 </html>
