@@ -3,51 +3,330 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing page</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            position: relative;
+        }
 
+        div.col-8 div {
+            height: 500px;
+        }
+
+        .footer {
+            position: bottom;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+    </style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar-example3" data-offset="25">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand">Wellbeing Application</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+            <ul class="navbar-nav mr-auto nav-pills">
+                <li class="nav-item active ">
+                    <a class="nav-link text-white " href="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link text-white" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active btn btn-outline-light text-dark" href="/healthyLifestylePage">Healthy
+                        Lifestyle Page <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <a class="navbar-toggler" role="button" data-toggle="collapse" href="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="pos-f-t">
-            <div class="collapse" id="navbarToggleExternalContent">
-                <div class="bg-dark p-4">
-                    <h5 class="text-white h4">Collapsed content</h5>
-                    <span class="text-muted">Toggleable via the navbar brand.</span>
-                </div>
-            </div>
+        </a>
     </nav>
 
+    <div class="bg-primary text-center text-white">
+        <h1 class="font-weight-bold">About Us Page</h1>
+        <h5>View Information about different features of this application</h5>
+        <br>
+    </div>
 
-    <h1> About us</h1>
-    <p> Welcome to our site. We're dedicated to giving you the very best experience with a focus on dependability,
-        customer service and uniqueness.</p>
-    <p> We have come a long way from our beginnings when our passion drove us to carry out intense research and gave us
-        the impetus to turn hard work and inspiration into to a booming online presence.</p>
+    <br>
+    <div class="container-fluid">
 
-    <p> We hope you enjoy our site. If you have any questions or comments, please don't hesitate to contact us.</p>
+        <div class="row">
+            <div class="col-sm-2">
 
+            </div>
 
+            <div class="col-sm-8">
+
+                <div id="goalsSection">
+                    <h2 class="text-center">Record Personal Goals</h2>
+
+                    <div class="btn-toolbar justify-content-end" role="toolbar" aria-label="Toolbar with button groups">
+                        <a href="/" id="completedGoalsPage" class="btn btn-primary mb-2 justify-content-end"
+                            role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-clipboard2-check" viewBox="0 0 16 16">
+                                <path
+                                    d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z" />
+                                <path
+                                    d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z" />
+                                <path
+                                    d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3Z" />
+                            </svg> Goals Completed</a>
+                    </div>
+
+                    <table class="table table-striped">
+                        <thead class="thead-primary">
+                            <tr>
+                                <th class="text-center align-middle" scope="col">Goal</th>
+                                <th class="text-center align-middle" scope="col">Goal Type</th>
+                                <th class="text-center align-middle" scope="col">Date Created</th>
+                                <th class="text-center align-middle" scope="col">Set Achievement Date</th>
+                                <th class="text-center align-middle" scope="col">Number of Repetitions</th>
+                                <th class="text-center align-middle" scope="col">
+                                    <a href="/" class="btn btn-primary" role="button" aria-pressed="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-plus-square mb-1" viewBox="0 0 16 16">
+                                            <path
+                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                            <path
+                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                        </svg></a>
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th class="text-center align-middle" scope="row">I want to be able to run 5K in under 30
+                                    minutes</th>
+                                <td class="text-center align-middle">Running/Cardio</td>
+                                <td class="text-center align-middle">04/05/2023</td>
+                                <td class="text-center align-middle">07/05/2023</td>
+                                <td class="text-center align-middle">1</td>
+                                <td class="text-center align-middle">
+
+                                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                                            <form action="/" method="GET">
+                                                <fieldset>
+                                                    <button id="editGoal" class="btn btn-sm btn-outline-dark"
+                                                        type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                            height="16" fill="currentColor" class="bi bi-pencil-fill"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                                                        </svg></button>
+                                                </fieldset>
+                                            </form>
+
+                                            <form action="/" method="GET">
+                                                <fieldset>
+                                                    <button id="deleteGoal" class="btn btn-sm btn-outline-dark"
+                                                        type="submit">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-trash3-fill"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                        </svg></button>
+                                                </fieldset>
+                                            </form>
+
+                                            <form action="/" method="GET">
+                                                <fieldset>
+                                                    <button id="completedGoal" class="btn btn-sm btn-outline-dark"
+                                                        type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                            height="16" fill="currentColor" class="bi bi-check2-circle"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                                            <path
+                                                                d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                                        </svg></button>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div id="addEditDeleteGoalsSection">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h2 class="text-center">Add, Edit and Delete Goals</h2>
+                                    <br>
+                                    <p style="font-size:18px" class="text-justify">Users would be able to add, edit
+                                        or delete any
+                                        goals as necessary. Fitness, Nutrition and Healthy Lifestyle goals can be
+                                        created and viewed
+                                        on their specific pages.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div id="achievingGoalsSection">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h2 class="text-center">Achieving Goals</h2>
+                                    <br>
+                                    <p style="font-size:18px" class="text-justify">Once set goals have been
+                                        achieved,
+                                        users can
+                                        complete them. All completed goals can also be viewed, which also shows what
+                                        date the goals
+                                        were completed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="applicationPages">
+                    <br>
+                    <br>
+                    <br>
+                    <h2 class="text-center">ApplicationPages</h2>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+
+                                <div id="fitnessSection">
+                                    <br>
+
+                                    <h2 class="text-center">Fitness</h2>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size:18px" class="text-justify">On this page the user is able to
+                                        create,
+                                        edit, delete and complete fitness goals. Also, the user is able to view the
+                                        following information, to aid in creating goals:</p>
+                                    <ul style="font-size:18px">
+                                        <li>Setting Goals</li>
+                                        <li>Creating a Plan</li>
+                                        <li>Benefits of Exercise</li>
+                                        <li>Types of Exercises</li>
+                                        <li>Safety Tips</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="col">
+
+                                <div id="nutritionSection">
+                                    <br>
+
+                                    <h2 class="text-center">Nutrition</h2>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size:18px" class="text-justify">On this page the user is able to
+                                        create,
+                                        edit, delete and complete nutrition goals. Also, the user is able to view the
+                                        following information, to aid in creating goals:</p>
+                                    <ul style="font-size:18px">
+                                        <li>Fueling for Exercise</li>
+                                        <li>Timing of Meals</li>
+                                        <li>Hydration</li>
+                                        <li>Macronutrients</li>
+                                        <li>Supplements</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="col">
+
+                                <div id="healthylifestyleSection">
+                                    <br>
+
+                                    <h2 class="text-center">Healthy Lifestyle</h2>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size:18px" class="text-justify">On this page the user is able to
+                                        create,
+                                        edit, delete and complete healthy lifestyle goals. Also, the user is able to
+                                        view
+                                        the
+                                        following information, to aid in creating goals:</p>
+                                    <ul style="font-size:18px">
+                                        <li>Regular Exercise</li>
+                                        <li>Physical Activity</li>
+                                        <li>Mind-Body Exercises</li>
+                                        <li>Outdoor Exercise</li>
+                                        <li>Active Lifestyle</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+            <div class="col-sm-2">
+
+                <div class="sticky-top">
+                    <br>
+                    <br>
+                    <br>
+                    <nav id="navbar-example3" class="navbar">
+
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#goalsSection">Goals</a>
+                            <li class="nav-item">
+                                <a class="nav-link ml-3 my-1" href="#addEditDeleteGoalsSection">Add, Edit or Delete
+                                    Goals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ml-3 my-1 " href="#achievingGoalsSection">Achieving Goals</a>
+                            </li>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#applicationPages">Applications Pages</a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </body>
+
+<div class="footer bg-primary">
+    <br>
+    <p>Zuhayr Umar - WAD2 Practical Coursework: Development of a wellness web application</p>
+    <br>
+</div>
 
 </html>
