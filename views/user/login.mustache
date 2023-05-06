@@ -2,40 +2,77 @@
 <head>
     {{>header}}
 </head>
-<body class="container">
-    <h1>{{title}}</h1>
-    <h2>Sign In</h2>
-    <div id="formContent">
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand">Wellbeing Application</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav-pills">
+                <li class="nav-item active ">
+                    <a class="nav-link active btn btn-outline-light text-dark " href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/register">Register</a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-toggler" role="button" data-toggle="collapse" href="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+    </nav>
+
+    <div class="bg-primary text-center text-white">
+        <h1 class="font-weight-bold">Sign In Page</h1>
+        <br>
+    </div>
+
+ <div class="container">
+
+ <div class="row">
+ <div class="col-sm col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+<br>
+ 
         <!-- Login Form -->
-        <form method="POST" action="/login">
-            <div class="form-group">
-                <label for="username" class="col-sm-2 col-formlabel">
-                    User Name
+        <form method="POST" action="/login" id="signupForm" class="cmxform border border-primary shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="form-group ">
+                <label for="username" class="col-sm-2 col-formlabel mx-sm-3 ">
+                    Username
                 </label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control"  id="username" name="username" placeholder="username">
+                <div class="col-sm form-inline">
+                    <input type="text" class="form-control mx-sm-3"  id="username" name="username" placeholder="Enter Username" minlength="6" maxlength="20" aria-describedby="passwordHelpInline">
+                     <small id="passwordHelpInline" class="text-muted">
+                         Must be 6-20 characters long.
+                        </small>
                 </div>
             </div>
             <div class="form-group">
-                <label for="password" class="col-sm-2 col-formlabel">
+                <label for="password" class="col-sm-2 col-formlabel mx-sm-3">
                     Password
                 </label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control"  id="password" name="password"placeholder="password">
+                <div class="col-sm form-inline">
+                    <input type="password" class="form-control mx-sm-3"  id="password" name="password"placeholder="Enter Password" minlength="8" maxlength="20" aria-describedby="passwordHelpInline">
+                        <small id="passwordHelpInline" class="text-muted">
+                         Must be 8-20 characters long.
+                        </small>
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary" value="Sign In">
+            <div class="form-group text-center">
+            <input type="submit" class="btn btn-primary mx-sm-4" value="Sign In">
+            </div>
         </form>
-    </div>
-</body>
-</html>
 
-<form class="form-inline">
-  <div class="form-group">
-    <label for="inputPassword6">Password</label>
-    <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-    <small id="passwordHelpInline" class="text-muted">
-      Must be 8-20 characters long.
-    </small>
-  </div>
-</form>
+
+ </div>
+ </div>
+ </div>
+
+</body>
+
+<div class="footer bg-primary">
+    <br>
+    <p>Zuhayr Umar - WAD2 Practical Coursework: Development of a wellness web application</p>
+    <br>
+</div>
+</html>
