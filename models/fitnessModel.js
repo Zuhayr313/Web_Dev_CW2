@@ -108,29 +108,59 @@ class Fitness {
         })
     }
 
-    //a function to return all Nutrition goal  from the database
-    getAllNutritionGoal() {
+    //a function to return all Uncompleted Nutrition goal  from the database
+    getAllUncompletedNutritionGoal() {
         return new Promise((resolve, reject) => {
-            this.db.find({ entry_Type: 'Nutrition Goal' }, function (err, entries) {
+            this.db.find({ entry_Type: 'Nutrition Goal', goal_Achieved: "No" }, function (err, entries) {
                 if (err) {
                     reject(err);
                 } else {
                     resolve(entries);
-                    console.log('getAllNutritionGoal returns: ', entries);
+                    console.log('getAllUncompletedNutritionGoal returns: ', entries);
                 }
             })
         })
     }
 
-    //a function to return all Healthy Lifestyle goal from the database
-    getAllHealthyLifestyleGoal() {
+    //a function to return all uncompleted Nutrition goal entries from the database
+    getAllCompletedNutritionGoal() {
         return new Promise((resolve, reject) => {
-            this.db.find({ entry_Type: 'Healthy Lifestyle Goal' }, function (err, entries) {
+            this.db.find({ entry_Type: 'Nutrition Goal', goal_Achieved: "Yes" }, function (err, entries) {
                 if (err) {
                     reject(err);
                 } else {
                     resolve(entries);
-                    console.log('getAllHealthyLifestyleGoal returns: ', entries);
+                    console.log('getAllCompletedNutritionGoal returns: ', entries);
+                }
+            })
+        })
+    }
+
+
+
+    //a function to return all Uncompleted Healthy Lifestyle goal from the database
+    getAllUncompletedHealthyLifestyleGoal() {
+        return new Promise((resolve, reject) => {
+            this.db.find({ entry_Type: 'Healthy Lifestyle Goal', goal_Achieved: "No" }, function (err, entries) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(entries);
+                    console.log('getAllUncompletedHealthyLifestyleGoal returns: ', entries);
+                }
+            })
+        })
+    }
+
+    //a function to return all Completed Healthy Lifestyle goal entries from the database
+    getAllCompletedHealthyLifestyleGoal() {
+        return new Promise((resolve, reject) => {
+            this.db.find({ entry_Type: 'Healthy Lifestyle Goal', goal_Achieved: "Yes" }, function (err, entries) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(entries);
+                    console.log('getAllCompletedHealthyLifestyleGoal returns: ', entries);
                 }
             })
         })
@@ -221,25 +251,6 @@ class Fitness {
     getGoalsById(goalId) {
         return new Promise((resolve, reject) => {
             this.db.find({ '_id': goalId }, function (err, entries) {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(entries);
-                    console.log('getEntriesByUser returns: ', entries);
-                }
-            })
-        })
-    }
-
-
-
-
-
-
-
-    getEntriesByUser(authorName) {
-        return new Promise((resolve, reject) => {
-            this.db.find({ 'author': authorName }, function (err, entries) {
                 if (err) {
                     reject(err);
                 } else {

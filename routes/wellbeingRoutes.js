@@ -15,21 +15,30 @@ router.get("/logout", controller.logout);
 
 router.get("/fitnessPage", controller.show_fitness_Page);
 router.get("/completedFitnessGoal", controller.show_Completed_Fitness_Goal);
-
 router.get("/newFitnessGoal", controller.show_new_Fitness_Goal);
 router.post("/newFitnessGoal", controller.post_new_Fitness_Goal);
 router.get('/editFitnessGoal/:_id', controller.show_edit_Fitness_Goal);
 router.post('/editFitnessGoal/:_id', controller.post_edit_Fitness_Goal);
-router.post('/deleteGoal/:_id', controller.post_delete_Goal);
-router.post('/completedGoal/:_id', controller.post_completed_Goal);
+router.post('/deleteGoal/:_id', controller.post_fitness_delete_Goal);
+router.post('/completedGoal/:_id', controller.post_fitness_completed_Goal);
 
 router.get("/nutritionPage", controller.show_nutrition_Page);
+router.get("/completedNutritionPage", controller.show_Completed_Nutrition_Goal);
+router.get("/newNutritionGoal", controller.show_new_Nutrition_Goal);
+router.post("/newNutritionGoal", controller.post_new_Nutrition_Goal);
+router.get('/editNutritionGoal/:_id', controller.show_edit_Nutrition_Goal);
+router.post('/editNutritionGoal/:_id', controller.post_edit_Nutrition_Goal);
+router.post('/deleteNutritionGoal/:_id', controller.post_Nutrition_delete_Goal);
+router.post('/completedNutritionGoal/:_id', controller.post_Nutrition_completed_Goal);
 
 router.get("/healthyLifestylePage", controller.show_healthy_Lifestyle_Page);
-
-//router.get('/new', verify, controller.show_new_entries);
-//router.post('/new', verify, controller.post_new_entry);
-//router.get('/posts/:author', controller.show_user_entries);
+router.get("/completedHealthyLifestylePage", controller.show_Completed_Healthy_Lifestyle_Goal);
+router.get("/newHealthyLifestyleGoal", controller.show_new_Healthy_Lifestyle_Goal);
+router.post("/newHealthy-LifestyleGoal", controller.post_new_Healthy_Lifestyle_Goal);
+router.get('/editHealthyLifestyleGoal/:_id', controller.show_edit_Healthy_Lifestyle_Goal);
+router.post('/editHealthy-LifestyleGoal/:_id', controller.post_edit_Healthy_Lifestyle_Goal);
+router.post('/deleteHealthyLifestyleGoal/:_id', controller.post_Healthy_Lifestyle_delete_Goal);
+router.post('/completedHealthyLifestyleGoal/:_id', controller.post_Healthy_Lifestyle_completed_Goal);
 
 
 router.use(function (req, res) {

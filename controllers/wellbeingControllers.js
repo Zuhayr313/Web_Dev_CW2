@@ -50,17 +50,15 @@ exports.post_new_user = function (req, res) {
 
 
 exports.loggedIn_landing = function (req, res) {
-  /*db.getAllEntries()
+  db.getAllUncompletedFitnessGoal()
     .then((list) => {
-      res.render("entries", {
-        title: "Guest Book",
-        user: "user",
-        entries: list,
+      res.render("fitness/fitnessPage", {
+        fitnessGoals: list,
       });
     })
     .catch((err) => {
       console.log("promise rejected", err);
-    });*/
+    });
 };
 
 
@@ -91,8 +89,6 @@ exports.show_Completed_Fitness_Goal = function (req, res) {
       console.log("promise rejected", err);
     });
 };
-
-
 exports.show_new_Fitness_Goal = function (req, res) {
   res.render("goals/newGoal", {
     title: "Fitness",
@@ -108,8 +104,6 @@ exports.post_new_Fitness_Goal = function (req, res) {
   db.addGoal(req.body.goal, req.body.goal_Type, 'Fitness Goal', req.body.set_Achievement_Date, req.body.goal_reps);
   res.redirect("/fitnessPage");
 };
-
-
 exports.show_edit_Fitness_Goal = function (req, res) {
   let goalId = req.params._id;
   db.getGoalsById(goalId)
@@ -117,7 +111,7 @@ exports.show_edit_Fitness_Goal = function (req, res) {
       res.render("goals/editGoal", {
         title: "Fitness",
         user: "user",
-        fitnessGoals: list,
+        goalsList: list,
       });
     })
     .catch((err) => {
@@ -135,18 +129,14 @@ exports.post_edit_Fitness_Goal = function (req, res) {
   db.updateGoal(goalId, req.body.goal, req.body.goal_Type, req.body.set_Achievement_Date, req.body.goal_Reps);
   res.redirect("/fitnessPage");
 };
-
-
-exports.post_delete_Goal = function (req, res) {
+exports.post_fitness_delete_Goal = function (req, res) {
   console.log("processing post - delete_Goal controller");
   let goalId = req.params._id;
   db.deleteGoal(goalId);
   res.redirect("/fitnessPage");
 
 };
-
-
-exports.post_completed_Goal = function (req, res) {
+exports.post_fitness_completed_Goal = function (req, res) {
   console.log("processing post - completed_Goal controller");
   let goalId = req.params._id;
   db.completeGoal(goalId);
@@ -158,67 +148,50 @@ exports.post_completed_Goal = function (req, res) {
 
 
 exports.show_nutrition_Page = function (req, res) {
-  res.render("nutrition/nutritionPage");
-  //res.render("newEntry", {
-  //  title: "Guest Book",
-  //  user: "user"
-  //});
-};
-
-
-
-
-
-
-exports.show_healthy_Lifestyle_Page = function (req, res) {
-  res.render("healthyLifestyle/healthyLifestylePage");
-  //res.render("newEntry", {
-  //  title: "Guest Book",
-  //  user: "user"
-  //});
-};
-
-/*
-exports.landing_page = function (req, res) {
-  db.getAllEntries()
+  db.getAllUncompletedNutritionGoal()
     .then((list) => {
-      res.render("entries", {
-        title: "Guest Book",
-        entries: list,
+      res.render("nutrition/nutritionPage", {
+        nutritionGoals: list,
       });
     })
     .catch((err) => {
       console.log("promise rejected", err);
     });
 };
-*/
-
-/*exports.show_new_entries = function (req, res) {
-  res.render("newEntry", {
-    title: "Guest Book",
+exports.show_Completed_Nutrition_Goal = function (req, res) {
+  db.getAllCompletedNutritionGoal()
+    .then((list) => {
+      res.render("nutrition/completedNutritionPage", {
+        nutritionGoals: list,
+      });
+    })
+    .catch((err) => {
+      console.log("promise rejected", err);
+    });
+};
+exports.show_new_Nutrition_Goal = function (req, res) {
+  res.render("goals/newGoal", {
+    title: "Nutrition",
     user: "user",
   });
 };
-
-exports.post_new_entry = function (req, res) {
-  console.log("processing post-new_entry controller");
-  if (!req.body.author) {
-    response.status(400).send("Entries must have an author.");
+exports.post_new_Nutrition_Goal = function (req, res) {
+  console.log("processing post - new_Nutrition_Goal controller");
+  if (!req.body.goal) {
+    response.status(400).send("Entries must have a goal.");
     return;
   }
-  db.addEntry(req.body.author, req.body.subject, req.body.contents);
-  res.redirect("/loggedIn");
+  db.addGoal(req.body.goal, req.body.goal_Type, 'Nutrition Goal', req.body.set_Achievement_Date, req.body.goal_reps);
+  res.redirect("/nutritionPage");
 };
-*/
-
-exports.show_user_entries = function (req, res) {
-  let user = req.params.author;
-  db.getEntriesByUser(user)
-    .then((entries) => {
-      res.render("entries", {
-        title: "Guest Book",
+exports.show_edit_Nutrition_Goal = function (req, res) {
+  let goalId = req.params._id;
+  db.getGoalsById(goalId)
+    .then((list) => {
+      res.render("goals/editGoal", {
+        title: "Nutrition",
         user: "user",
-        entries: entries,
+        goalsList: list,
       });
     })
     .catch((err) => {
@@ -226,4 +199,109 @@ exports.show_user_entries = function (req, res) {
       console.log(JSON.stringify(err));
     });
 };
+exports.post_edit_Nutrition_Goal = function (req, res) {
+  console.log("processing post - edit_Nutrition_Goal controller");
+  if (!req.body.goal) {
+    response.status(400).send("Entries must have an goal.");
+    return;
+  }
+  let goalId = req.params._id;
+  db.updateGoal(goalId, req.body.goal, req.body.goal_Type, req.body.set_Achievement_Date, req.body.goal_Reps);
+  res.redirect("/nutritionPage");
+};
+exports.post_Nutrition_delete_Goal = function (req, res) {
+  console.log("processing post - Nutrition_delete_Goal controller");
+  let goalId = req.params._id;
+  db.deleteGoal(goalId);
+  res.redirect("/nutritionPage");
 
+};
+exports.post_Nutrition_completed_Goal = function (req, res) {
+  console.log("processing post - Nutrition_completed_Goal controller");
+  let goalId = req.params._id;
+  db.completeGoal(goalId);
+  res.redirect("/nutritionPage");
+
+};
+
+
+exports.show_healthy_Lifestyle_Page = function (req, res) {
+  db.getAllUncompletedHealthyLifestyleGoal()
+    .then((list) => {
+      res.render("healthyLifestyle/healthyLifestylePage", {
+        healthyLifestyleGoals: list,
+      });
+    })
+    .catch((err) => {
+      console.log("promise rejected", err);
+    });
+};
+
+exports.show_Completed_Healthy_Lifestyle_Goal = function (req, res) {
+  db.getAllCompletedHealthyLifestyleGoal()
+    .then((list) => {
+      res.render("healthyLifestyle/completedHealthyLifestylePage", {
+        healthyLifestyleGoals: list,
+      });
+    })
+    .catch((err) => {
+      console.log("promise rejected", err);
+    });
+};
+
+exports.show_new_Healthy_Lifestyle_Goal = function (req, res) {
+  res.render("goals/newGoal", {
+    title: "Healthy-Lifestyle",
+    user: "user",
+  });
+};
+exports.post_new_Healthy_Lifestyle_Goal = function (req, res) {
+  console.log("processing post - new_Healthy_Lifestyle_Goal controller");
+  if (!req.body.goal) {
+    response.status(400).send("Entries must have a goal.");
+    return;
+  }
+  db.addGoal(req.body.goal, req.body.goal_Type, 'Healthy Lifestyle Goal', req.body.set_Achievement_Date, req.body.goal_reps);
+  res.redirect("/healthyLifestylePage");
+};
+
+exports.show_edit_Healthy_Lifestyle_Goal = function (req, res) {
+  let goalId = req.params._id;
+  db.getGoalsById(goalId)
+    .then((list) => {
+      res.render("goals/editGoal", {
+        title: "Healthy-Lifestyle",
+        user: "user",
+        goalsList: list,
+      });
+    })
+    .catch((err) => {
+      console.log("Error: ");
+      console.log(JSON.stringify(err));
+    });
+};
+exports.post_edit_Healthy_Lifestyle_Goal = function (req, res) {
+  console.log("processing post - edit_Healthy_Lifestyle_Goal controller");
+  if (!req.body.goal) {
+    response.status(400).send("Entries must have an goal.");
+    return;
+  }
+  let goalId = req.params._id;
+  db.updateGoal(goalId, req.body.goal, req.body.goal_Type, req.body.set_Achievement_Date, req.body.goal_Reps);
+  res.redirect("/healthyLifestylePage");
+};
+
+exports.post_Healthy_Lifestyle_delete_Goal = function (req, res) {
+  console.log("processing post - Healthy_Lifestyle_delete_Goal controller");
+  let goalId = req.params._id;
+  db.deleteGoal(goalId);
+  res.redirect("/healthyLifestylePage");
+
+};
+exports.post_Healthy_Lifestyle_completed_Goal = function (req, res) {
+  console.log("processing post - Healthy_Lifestyle_completed_Goal controller");
+  let goalId = req.params._id;
+  db.completeGoal(goalId);
+  res.redirect("/healthyLifestylePage");
+
+};
