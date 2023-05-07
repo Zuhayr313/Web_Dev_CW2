@@ -1,0 +1,71 @@
+<html>
+<head>
+    {{>header}}
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand">Wellbeing Application</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav-pills">
+                <li class="nav-item ">
+                    <a class="nav-link text-white " href="/login">Login</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-light text-dark " href="/register">Register</a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-toggler" role="button" data-toggle="collapse" href="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+    </nav>
+
+    <div class="bg-primary text-center text-white">
+        <h1 class="font-weight-bold">Register Page - User already Registered</h1>
+        <br>
+    </div>
+
+ <div class="container">
+
+ <div class="row">
+ <div class="col-sm col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+<br>
+ 
+<form method="post" role="/register" class="cmxform border border-primary shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="form-group">
+        {{user-name-error}}
+        <label for="username" class="col-sm-2 col-formlabel mx-sm-3 ">Username</label>
+                <div class="col-sm form-inline">
+                    <input type="text" class="form-control mx-sm-3"  id="username" name="username" placeholder="Enter Username" minlength="6" maxlength="20" aria-describedby="passwordHelpInline">
+                     <small id="passwordHelpInline" class="text-muted">
+                         Must be 6-20 characters long.
+                        </small>
+                </div>    </div>
+    <div class="form-group">
+        <label for="password" class="col-sm-2 col-formlabel mx-sm-3 ">Password</label>
+<div class="col-sm form-inline">
+                    <input type="password" class="form-control mx-sm-3"  id="pass" name="pass"placeholder="Enter Password" minlength="8" maxlength="20" aria-describedby="passwordHelpInline">
+                        <small id="passwordHelpInline" class="text-muted">
+                         Must be 8-20 characters long.
+                        </small>
+                </div>    </div>
+    <div class="form-group text-center">
+        <input type="submit" value="Register" class="btn btn-primary mx-sm-4">
+    </div>
+</form>
+
+</div>
+</div>
+</div>
+
+</body>
+<div class="footer bg-primary">
+    <br>
+    <p>Zuhayr Umar - WAD2 Practical Coursework: Development of a wellness web application</p>
+    <br>
+</div>
+</html>

@@ -3,8 +3,8 @@ let idCounter = 0;
 
 class Fitness {
     constructor() {
-        this.db = new nedb({ filename: "./fitness.db", autoload: true });
-        console.log('DB connected to ' + './fitness.db');
+        this.db = new nedb({ filename: "./goals.db", autoload: true });
+        console.log('DB connected to ' + './goals.db');
 
         //this.idCounter = new idCounter;
         //console.log(this.idCounter);

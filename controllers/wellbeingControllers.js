@@ -1,8 +1,8 @@
-const fitnessDAO = require("../models/fitnessModel");
+const goalsDAO = require("../models/goalsModel");
 const userDao = require("../models/userModel.js");
 const path = require("path");
 
-const db = new fitnessDAO();
+const db = new goalsDAO();
 db.init();
 
 exports.landing_page = function (req, res) {
@@ -14,11 +14,24 @@ exports.show_login = function (req, res) {
 };
 
 exports.handle_login = function (req, res) {
+  const user = req.body.username;
+  const password = req.body.pass;
+
+  //console.log( userDao.getUserByUsername(user));
+
   db.getAllUncompletedFitnessGoal()
     .then((list) => {
-      res.render("fitness/fitnessPage", {
-        fitnessGoals: list,
-      });
+
+      userDao.getUserByUsername(user)
+        .then((userInfo) => {
+
+          res.render("fitness/fitnessPage", {
+            fitnessGoals: list,
+            userInformation: userInfo,
+          })
+
+        });
+
     })
     .catch((err) => {
       console.log("promise rejected", err);
@@ -41,6 +54,8 @@ exports.post_new_user = function (req, res) {
     if (u) {
       res.send(401, "User exists:", user);
       return;
+      //res.redirect("/userFoundRegister");
+      //res.render("user/userFoundRegister");
     }
     userDao.create(user, password);
     console.log("register user", user, "password", password);
@@ -48,6 +63,9 @@ exports.post_new_user = function (req, res) {
   });
 };
 
+//exports.post_User_Found_Register = function (req, res) {
+// res.render("user/userFoundRegister");
+//};
 
 exports.loggedIn_landing = function (req, res) {
   db.getAllUncompletedFitnessGoal()
@@ -89,6 +107,7 @@ exports.show_Completed_Fitness_Goal = function (req, res) {
       console.log("promise rejected", err);
     });
 };
+
 exports.show_new_Fitness_Goal = function (req, res) {
   res.render("goals/newGoal", {
     title: "Fitness",

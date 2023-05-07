@@ -41,6 +41,19 @@ class UserDAO {
             }
         });
     }
+
+    getUserByUsername(username) {
+        return new Promise((resolve, reject) => {
+            this.db.find({ 'user': username }, function (err, user) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(user);
+                    console.log('getUserByUsername returns: ', user);
+                }
+            })
+        })
+    }
 }
 const dao = new UserDAO();
 dao.init();
